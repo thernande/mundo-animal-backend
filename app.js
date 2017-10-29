@@ -6,7 +6,10 @@ var bodyParser = require('body-parser');
 var app = express();
 
 // cargar rutas
-//var user_routes = require('./routes/user');
+var user_routes = require('./routes/user');
+var new_routes = require('./routes/new');
+var event_routes = require('./routes/event');
+var veterinary_routes = require('./routes/veterinary');
 
 //middlewares de body-parser
 app.use(bodyParser.urlencoded({extended:false}));
@@ -22,7 +25,10 @@ app.use((req, res, next) => {
 })
 
 // rutas body-parser
-//app.use('/api', user_routes);
+app.use('/api', user_routes);
+app.use('/api', new_routes);
+app.use('/api', event_routes);
+app.use('/api', veterinary_routes);
 
  /* app.get('/probando', (req,res) => {
 	res.status(200).send({message:'prueba de mensaje'});
