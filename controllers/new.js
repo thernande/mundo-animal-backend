@@ -5,6 +5,7 @@ var path = require('path');
 
 //modelos
 var New = require('../models/new');
+var User = require('../models/user');
 
 //servicio
 
@@ -21,7 +22,7 @@ function saveNews(req, res){
 	var params = req.body;
 
 	if(!params){
-		news.name = params.name;
+		news.title = params.title;
 		news.description = params.description;
 		news.date = params.date;
 		news.image = null;

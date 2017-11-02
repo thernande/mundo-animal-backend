@@ -51,7 +51,7 @@ function saveVeterinary(req, res){
 }
 
 function getVeterinaries(req, res){
-	Veterinaries.find({}).populate({path: 'user'}).exec((err, veterinaries) =>{
+	Veterinaries.find({}).exec((err, veterinaries) =>{
 		if(err){
 				res.status(500).send({ error: 'Something failed!' });
 		}
@@ -69,7 +69,7 @@ function getVeterinaries(req, res){
 
 function getVeterinary(req, res){
 	var veterinaryId = req.params.id;
-	Veterinary.findById(veterinaryId).populate({path: 'user'}).exec((err, veterinary) => {
+	Veterinary.findById(veterinaryId).exec((err, veterinary) => {
 		if(err){
 				res.status(500).send({ error: 'Something failed!' });
 		}
@@ -218,6 +218,6 @@ module.exports = {
 	deleteVeterinary,
 	getImageFile,
 	uploadImage,
-	deleteVeterinary
+	deleteImage
 
 }

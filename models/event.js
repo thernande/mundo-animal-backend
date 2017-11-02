@@ -10,8 +10,7 @@ var EventSchema = Schema({
     date_end: Date,
     place: String,
     image: String,
-    user: { type: Schema.ObjectId, ref: 'User' },
-    veterinary: { type: Schema.ObjectId, ref: 'Veterinay' },
+    user: { type: Schema.ObjectId, ref: 'User' }
 });
 
 module.exports = mongoose.model('event', EventSchema);

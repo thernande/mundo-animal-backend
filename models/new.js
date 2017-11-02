@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var NewSchema = Schema({
+var NewsSchema = Schema({
 	title: String,
 	description: String,
 	date: String,
@@ -11,4 +11,4 @@ var NewSchema = Schema({
     user: { type: Schema.ObjectId, ref: 'User' }
 });
 
-module.exports = mongoose.model('New', NewSchema);
+module.exports = mongoose.model('News', NewsSchema);
